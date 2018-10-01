@@ -1,0 +1,18 @@
+
+//codigo utilizado para clicar em botão dinamico angular com xpath.
+
+navegador.findElement(By.xpath("//button[contains(text(),'Limpar')]")).click();
+
+
+//codigo utilizado para clicar em listbox dinamico
+
+// preencher tipos de processamento ambos/chamadas
+		navegador.findElement(By.xpath("//*[@id=\"interfaceENova-card-filter-vlParametrosTipoRel\"]/div/input"))
+				.click();// click on that combo
+		int position = 2;
+		for (int i = 1; i <= position; i++) {
+			Actions actions = new Actions(navegador);
+			actions.sendKeys(Keys.DOWN).build().perform();// press down arrow key
+			Actions actions1 = new Actions(navegador);
+			actions1.sendKeys(Keys.ENTER).build().perform();// press enter
+		}
